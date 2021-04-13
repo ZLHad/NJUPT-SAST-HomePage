@@ -19,7 +19,9 @@ export const Nav00DataSource = {
             {
               children: (
                 <span>
-                  <p>&nbsp;部门介绍</p>
+                  <span>
+                    <p>首页</p>
+                  </span>
                 </span>
               ),
               name: 'text',
@@ -88,7 +90,9 @@ export const Nav00DataSource = {
             {
               children: (
                 <span>
-                  <p>&nbsp;精彩活动</p>
+                  <span>
+                    <p>部门介绍</p>
+                  </span>
                 </span>
               ),
               name: 'text',
@@ -105,7 +109,9 @@ export const Nav00DataSource = {
             {
               children: (
                 <span>
-                  <p>&nbsp;AtSAST</p>
+                  <span>
+                    <p>精彩活动</p>
+                  </span>
                 </span>
               ),
               name: 'text',
@@ -1313,7 +1319,9 @@ export const Footer10DataSource = {
                 <span>
                   <span>
                     <span>
-                      <p>B站主页</p>
+                      <span>
+                        <p>AtSAST</p>
+                      </span>
                     </span>
                   </span>
                 </span>

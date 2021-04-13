@@ -114,7 +114,7 @@ export const Nav00DataSource = {
                                     </span>
                                 </span>
                             ),
-                            name: 'text',
+                            name: 'text', cd
                         },
                     ],
                 },
@@ -502,13 +502,13 @@ export const Feature60DataSource = {
                                 ),
                             },
                             toText: true,
-                            children: '558',
+                            children: '701',
                         },
                         children: {
                             className: 'feature6-text knevesia9jm-editor_css',
                             children: (
                                 <span>
-                                    <p>第29届南邮校科协各部门总计558人。</p>
+                                    <p>第29届南邮校科协各部门总计701人。</p>
                                 </span>
                             ),
                         },

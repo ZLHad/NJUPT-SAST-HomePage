@@ -7,6 +7,7 @@ import Nav0 from './Nav0';
 import Banner0 from './Banner0';
 import Banner5 from './Banner5';
 import Content11 from './Content11';
+import Feature0 from './Feature0';
 import Feature6 from './Feature6';
 import Teams3 from './Teams3';
 import Footer1 from './Footer1';
@@ -14,8 +15,9 @@ import Point from './Point';
 import {
   Nav00DataSource,
   Banner00DataSource,
-  Banner50DataSource,
+  Banner51DataSource,
   Content110DataSource,
+  Feature00DataSource,
   Feature60DataSource,
   Teams30DataSource,
   Footer10DataSource,
@@ -34,7 +36,7 @@ export default class Home extends React.Component {
     super(props);
     this.state = {
       isMobile,
-    //   show: !location.port, // 如果不是 dva 2.0 请删除
+      show: !location.port, // 如果不是 dva 2.0 请删除
     };
   }
 
@@ -43,17 +45,17 @@ export default class Home extends React.Component {
     enquireScreen((b) => {
       this.setState({ isMobile: !!b });
     });
-    // // dva 2.0 样式在组件渲染之后动态加载，导致滚动组件不生效；线上不影响；
-    // /* 如果不是 dva 2.0 请删除 start */
-    // if (location.port) {
-    //   // 样式 build 时间在 200-300ms 之间;
-    //   setTimeout(() => {
-    //     this.setState({
-    //       show: true,
-    //     });
-    //   }, 500);
-    // }
-    // /* 如果不是 dva 2.0 请删除 end */
+    // dva 2.0 样式在组件渲染之后动态加载，导致滚动组件不生效；线上不影响；
+    /* 如果不是 dva 2.0 请删除 start */
+    if (location.port) {
+      // 样式 build 时间在 200-300ms 之间;
+      setTimeout(() => {
+        this.setState({
+          show: true,
+        });
+      }, 500);
+    }
+    /* 如果不是 dva 2.0 请删除 end */
   }
 
   render() {
@@ -71,15 +73,21 @@ export default class Home extends React.Component {
         isMobile={this.state.isMobile}
       />,
       <Banner5
-        id="Banner5_0"
-        key="Banner5_0"
-        dataSource={Banner50DataSource}
+        id="Banner5_1"
+        key="Banner5_1"
+        dataSource={Banner51DataSource}
         isMobile={this.state.isMobile}
       />,
       <Content11
         id="Content11_0"
         key="Content11_0"
         dataSource={Content110DataSource}
+        isMobile={this.state.isMobile}
+      />,
+      <Feature0
+        id="Feature0_0"
+        key="Feature0_0"
+        dataSource={Feature00DataSource}
         isMobile={this.state.isMobile}
       />,
       <Feature6
@@ -105,8 +113,9 @@ export default class Home extends React.Component {
         data={[
           'Nav0_0',
           'Banner0_0',
-          'Banner5_0',
+          'Banner5_1',
           'Content11_0',
+          'Feature0_0',
           'Feature6_0',
           'Teams3_0',
           'Footer1_0',
@@ -121,9 +130,8 @@ export default class Home extends React.Component {
           this.dom = d;
         }}
       >
-            {/* 如果不是 dva 2.0 替换成 {children} start */}
-            {children}
-        {/* {this.state.show && children} */}
+        {/* 如果不是 dva 2.0 替换成 {children} start */}
+        {this.state.show && children}
         {/* 如果不是 dva 2.0 替换成 {children} end */}
       </div>
     );
